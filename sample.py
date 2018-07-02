@@ -1,3 +1,6 @@
+from datetime import time
+import pandas as pd
+
 CITY_DATA = {'chicago': 'chicago.c  sv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
@@ -88,25 +91,25 @@ def time_stats(df):
     # TO DO: display the most common month
 
 
-df['Start Time'] == pd.to_datetime(df['Start Time'])
-df['month'] = df['Start Time'].dt.month
-common_month = df['month'].mode()[0]
-print('The most common or popular month:', common_month)
+    df['Start Time'] == pd.to_datetime(df['Start Time'])
+    df['month'] = df['Start Time'].dt.month
+    common_month = df['month'].mode()[0]
+    print('The most common or popular month:', common_month)
 
-# TO DO: display the most common day of week
-df['Start Time'] == pd.to_datetime(df['Start Time'])
-df['date'] = df['Start Time'].dt.date
-day_of_week = df['month'].mode()[0]
-print('The most common or popular day of the week:', day_of_week)
+    # TO DO: display the most common day of week
+    df['Start Time'] == pd.to_datetime(df['Start Time'])
+    df['date'] = df['Start Time'].dt.date
+    day_of_week = df['month'].mode()[0]
+    print('The most common or popular day of the week:', day_of_week)
 
-# TO DO: display the most common start hour
-df['Start Time'] == pd.to_datetime(df['Start Time'])
-df['hour'] = df['Start Time'].dt.hour
-popular_hour = df['hour'].mode()[0]
-print('The most common or popular hour of the day:', popular_hour)
+    # TO DO: display the most common start hour
+    df['Start Time'] == pd.to_datetime(df['Start Time'])
+    df['hour'] = df['Start Time'].dt.hour
+    popular_hour = df['hour'].mode()[0]
+    print('The most common or popular hour of the day:', popular_hour)
 
-print("\nThis took %s seconds." % (time.time() - start_time))
-print('-' * 40)
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-' * 40)
 
 
 def station_stats(df):
@@ -118,19 +121,19 @@ def station_stats(df):
     # TO DO: display most commonly used start station
 
 
-df['Start Station'] == pd.to_datetime(df['Start Time'])
-df['date'] = df['Start Time'].dt.date
-day_of_week = df['month'].mode()[0]
-print('The most common or popular day of the week:', day_of_week)
+    df['Start Station'] == pd.to_datetime(df['Start Time'])
+    df['date'] = df['Start Time'].dt.date
+    day_of_week = df['month'].mode()[0]
+    print('The most common or popular day of the week:', day_of_week)
 
-# TO DO: display most commonly used end station
-
-
-# TO DO: display most frequent combination of start station and end station trip
+    # TO DO: display most commonly used end station
 
 
-print("\nThis took %s seconds." % (time.time() - start_time))
-print('-' * 40)
+    # TO DO: display most frequent combination of start station and end station trip
+
+
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-' * 40)
 
 
 def trip_duration_stats(df):
@@ -142,17 +145,17 @@ def trip_duration_stats(df):
     # TO DO: display total travel time
 
 
-with open("file.csv") as fin:
-    headerline = fin.next()
-    total = 0
-    for row in csv.reader(fin):
-        total += int(row[2])
-    print(total)
+    with open("file.csv") as fin:
+        headerline = fin.next()
+        total = 0
+        for row in csv.reader(fin):
+            total += int(row[2])
+        print(total)
 
-    # TO DO: display mean travel time
+        # TO DO: display mean travel time
 
-print("\nThis took %s seconds." % (time.time() - start_time))
-print('-' * 40)
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-' * 40)
 
 
 def user_stats(df):
@@ -163,28 +166,29 @@ def user_stats(df):
 
     # TO DO: Display counts of user types
 
+    user_types = df['User Type'].value_counts()
+    print('The number of users by type:', user_types)
 
-user_types = df['User Type'].value_counts()
-print('The number of users by type:', user_types)
+    # TO DO: Display counts of gender
+    gender = df['Gender'].value_counts()
+    print('The number of users by gender:', gender)
 
-# TO DO: Display counts of gender
-gender = df['Gender'].value_counts()
-print('The number of users by gender:', gender)
+    # TO DO: Display earliest, most recent, and most common year of birth
+    # earliest is the lowest, most recent is the highest and most commor is the mode
+    youngest_user = df['Birth Year'].min()
+    print('The youngest user is:', youngest_user)
+    oldest_user = df['Birth Year'].max()
+    print('The oldest user is:', oldest_user)
+    popular_year = df['Birth Year'].mode()
 
-# TO DO: Display earliest, most recent, and most common year of birth
-# earliest is the lowest, most recent is the highest and most commor is the mode
-youngest_user = df['Birth Year'].min()
-print('The youngest user is:', youngest_user)
-oldest_user = df['Birth Year'].max()
-print('The oldest user is:', oldest_user)
-popular_year = df['Birth Year'].mode()
-
-print("\nThis took %s seconds." % (time.time() - start_time))
-print('-' * 40)
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-' * 40)
 
 
 def main():
     while True:
+        print('You are here')
+        exit()
         city, month, day = get_filters()
         df = load_data(city, month, day)
 

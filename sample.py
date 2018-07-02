@@ -24,6 +24,9 @@ def get_filters():
 
     while city is None:
         city = str(input('Select a city to analyze: chicago, new york city, or washington:'))
+        #anytime your getting input from the user, force it to either all caps or all lower caps
+        city = city.lower()
+
         if city in city_options:
             print('You have chosen to review bike share data on %s.' % city)
         else:

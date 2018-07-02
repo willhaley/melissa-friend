@@ -18,19 +18,14 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid
 
+    city_options = ['chicago', 'new york city', 'washington', 'a']
+    city = None
 
-    city = " "
-    while city != "city":
+    while city not in city_options:
         city = str(input('Select a city to analyze: chicago, new york city, or washington:'))
-        if city == "chicago":
-            print('You have chosen to review bikeshare data on Chicago.')
-        elif city == "new york city":
-            print('You have chosen to review bikeshare data on New York City.')
-        elif city == "washington":
-            print('You have chosen to review bikeshare data on Washington.')
-        else:
-            print('That is not a valid response. Please select either chicago, new york city, or washington.')
+        print('You have chosen to review bike share data on %s ,%s.' % city)
         # TO DO: get user input for month (all, january, february, ... , june).
+
     month = ""
     while month != "month":
         month = str(input('Choose a month betweeh january and june to analyze or choose None.'))
@@ -64,7 +59,7 @@ def get_filters():
 
         print('-' * 40)
 
-    return city, month, day
+    return city, month, weekday
 
 
 def load_data(city, month, day):
@@ -187,8 +182,6 @@ def user_stats(df):
 
 def main():
     while True:
-        print('You are here')
-        exit()
         city, month, day = get_filters()
         df = load_data(city, month, day)
 

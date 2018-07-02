@@ -16,50 +16,51 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid
 
 
-city = " "
-while city != "city":
-    city = str(input('Select a city to analyze: chicago, new york city, or washington:'))
-    if city == "chicago":
-        print('You have chosen to review bikeshare data on Chicago.')
-    elif city == "new york city":
-        print('You have chosen to review bikeshare data on New York City.')
-    elif city == "washington":
-        print('You have chosen to review bikeshare data on Washington.')
-    else:
-        print('That is not a valid response. Please select either chicago, new york city, or washington.')
-    # TO DO: get user input for month (all, january, february, ... , june).
-month = ""
-while month != "month":
-    month = str(input('Choose a month betweeh january and june to analyze or choose None.'))
-    if month == "none":
-        print('You have decided not to select a month.')
-    elif month == "janaury, february, march, april, may, june":
-        print('You have selected', month, '.')
-    else:
-        print('That is not a valid response. Please select either none or january, february,...,june.')
+    city = " "
+    while city != "city":
+        city = str(input('Select a city to analyze: chicago, new york city, or washington:'))
+        if city == "chicago":
+            print('You have chosen to review bikeshare data on Chicago.')
+        elif city == "new york city":
+            print('You have chosen to review bikeshare data on New York City.')
+        elif city == "washington":
+            print('You have chosen to review bikeshare data on Washington.')
+        else:
+            print('That is not a valid response. Please select either chicago, new york city, or washington.')
+        # TO DO: get user input for month (all, january, february, ... , june).
+    month = ""
+    while month != "month":
+        month = str(input('Choose a month betweeh january and june to analyze or choose None.'))
+        if month == "none":
+            print('You have decided not to select a month.')
+        elif month == "janaury, february, march, april, may, june":
+            print('You have selected', month, '.')
+        else:
+            print('That is not a valid response. Please select either none or january, february,...,june.')
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-weekday = " "
-while weekday != "month":
-    weekday = str(input('Choose a day of the week to review: monday, tuesday, wednesday,...,sunday.'))
-    if weekday == "monday":
-        print('You have selected Monday.')
-    elif weekday == "tuesday":
-        print('You have selected Tuesday.')
-    elif weekday == "wednesday":
-        print('You have selected Wednesday.')
-    elif weekday == "thursday":
-        print('You have selected Thursday.')
-    elif weekday == "friday":
-        print('You  have selected Friday.')
-    elif weekday == "saturday":
-        print('You have selected Saturday.')
-    elif weekday == "sunday":
-        print('You have selected Sunday.')
-    else:
-        print('That is not a valid response. Please select all, monday, tuesday, wednesday,...,sunday.')
+        # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    weekday = " "
+    while weekday != "month":
+        weekday = str(input('Choose a day of the week to review: monday, tuesday, wednesday,...,sunday.'))
+        if weekday == "monday":
+            print('You have selected Monday.')
+        elif weekday == "tuesday":
+            print('You have selected Tuesday.')
+        elif weekday == "wednesday":
+            print('You have selected Wednesday.')
+        elif weekday == "thursday":
+            print('You have selected Thursday.')
+        elif weekday == "friday":
+            print('You  have selected Friday.')
+        elif weekday == "saturday":
+            print('You have selected Saturday.')
+        elif weekday == "sunday":
+            print('You have selected Sunday.')
+        else:
+            print('That is not a valid response. Please select all, monday, tuesday, wednesday,...,sunday.')
 
-    print('-' * 40)
+        print('-' * 40)
+
     return city, month, day
 
 
